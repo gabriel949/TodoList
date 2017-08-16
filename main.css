@@ -1,0 +1,50 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+h1{
+    margin:0;
+    
+}
+
+.done{
+    text-decoration: line-through;
+}
+
+a#limpar{
+    background-color: #9fb1b5;  
+
+}
+
+.task{
+    vertical-align: middle;
+}
+
+input#Remover{
+    vertical-align: middle;
+	right: 0;
+	border: 0;
+	background: none;
+	font-size: 16px;
+	color: #cc9a9a;
+	margin-bottom: 11px;
+	transition: color 0.2s ease-out;
+     
+}
+
+input#Remover:hover{
+    
+     color: #F90000;
+}
+
+
+header{
+    height: 160px;
+    text-align: center;
+    padding: 42px;
+    color: white;
+    margin-bottom: 81px;
+    background: #326799;
+}

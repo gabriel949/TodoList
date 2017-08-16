@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app="todolist">
+
+<head>
+	<title>Lista Telefonica</title>
+	<link rel="stylesheet" href="vendors/css/materialize.min.css">
+	<link rel="stylesheet" href="main.css">
+     <link rel="stylesheet" href="vendors/font-awesome/css/font-awesome.min.css">
+	<script src="angular.js"></script>
+	<script src="vendors/js/jquery.min.js"></script>
+	<script src="vendors/js/materialize.min.js"></script>
+	<script src="main.js"></script>
+</head>
+
+<body ng-controller="todolistCtrl">
+
+	<header>
+		<h1><i class="fa fa-list-ol" aria-hidden="true"></i>Lista de Tarefas</h1>
+	</header>
+	<div class="container">	
+		<div class="col s12">
+			<div class="row">
+				<div class="input-field col s6">
+					<input class="form-control" id="newtodo" type="text" ng-model="task.nome" />
+					<label for="newtodo">Nova Tarefas</label>		
+				</div>
+				<div class="input-field col s6">
+					<button class="waves-effect waves-light btn-large" ng-click="adicionarContato(task)">Adicionar</button>					   
+				</div>
+			</div>
+		</div>
+		
+		<div class="row" ng-if="tasks.length > 0" >
+			<div class="col s6">
+			<ul class="collection col s12" >
+
+				<li class="collection-item tarefa" ng-repeat="task in tasks" id="to-dos" >
+					
+						<input type="checkbox" id="{{task.id}}" ng-model="task.status" />
+					<label class="task" for="{{task.id}}"  ng-class="{'done' : task.status}">{{task.nome}}</label>	
+					
+					<input class="right" type="button" id ="Remover" ng-click="grita(task)" value="x">			
+							
+				</li>
+                         
+			</ul>
+			<div class="col s12">
+				
+				<button  class="waves-effect waves-light btn-large right"  ng-click="Salvar()">Salvar Lista</button>
+			</div>
+			</div>
+		</div>
+		
+	
+	</div>
+
+</body>
+
+</html>
